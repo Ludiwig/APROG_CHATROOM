@@ -1,0 +1,58 @@
+<HTML>
+	<head>
+		<title>Login</title>
+		<link type="text/css" rel="stylesheet" href="style.css" />
+	</head>
+	
+	<body id="loginback">
+		<h1><%= message%></h1>
+		<div class="container middle">
+			<div class="loginbox">
+				<div class="right_login clearfix">
+					<form action="/onhost" method="POST">
+						<label for="username_poster"> 
+							<input type="text" id="username_poster" name="username" placeholder="username">
+						</label>
+					<br>
+						<label for="servername_poster">
+							<input type="text" id="servername_poster" name="servername" placeholder="servername">
+						</label>
+					<br>
+						<label for="password_poster">
+							<input type="text" id="password_poster" name="password" placeholder="password">
+						</label>
+
+					<div class="button">
+						<button type="submit">HOST</button>
+					</div>
+					</form>
+				</div>
+				<div class="left_login clearfix">
+					<form action="/onjoin" method="POST">
+						<label for="username_receiver">
+							<input type="text" id="username_receiver" name="username" placeholder="username"> 
+					</label>
+                <br>
+					<label for="servername_receiver">
+						<select name="servername">
+						<% for(var i = 0; i < rows.length; i++) { %>
+						<option><%= rows[i].name %></option>
+						<%}%>
+						</select>
+					</label>
+                <br>
+					<label for="password_receiver">
+						<input type="text" id="password_receiver" name="password" placeholder="password">
+					</label>
+                <br>
+					<div class="button">
+						<button type="submit" value="submit">JOIN</button>
+					</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="bgbox"></div>
+	</body>
+</HTML>
